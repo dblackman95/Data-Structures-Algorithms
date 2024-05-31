@@ -1,0 +1,35 @@
+using System;
+
+public class BinarySearch
+{
+    public static void Main(string[] args)
+    {
+        int[] array = {-14, -12, -5, -1, 0, 2, 5, 16, 21, 43, 55, 93, 150, 150, 168, 1048};
+        Console.WriteLine (BinarySearch(array, 168));
+    }
+    
+    static int BinarySearch(int[] array, int val)
+    {
+        int start = 0;
+        int end = array.Length;
+        int midpoint = 0;
+        
+        while (start < end)
+        {
+            midpoint = (start + end) / 2;
+            
+            if (array[midpoint] == val)
+            {
+                return midpoint;
+            } 
+            else if (array[midpoint] < val)
+            {
+                start = midpoint + 1;
+            } 
+            else {
+                end = midpoint;
+            }
+        }
+        return -1;
+    }
+}
